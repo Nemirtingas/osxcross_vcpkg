@@ -1,9 +1,9 @@
 FROM ubuntu:18.04
 ENV PATH                $PATH:/osxcross/target/bin
 ENV LD_LIBRARY_PATH     /osxcross/target/lib
-ENV OSX_VER             10.12
+ENV OSX_VER             10.13
 ENV OSXCROSS_SDK        /osxcross/target/SDK/MacOSX${OSX_VER}.sdk
-ENV OSXCROSS_TARGET     darwin16
+ENV OSXCROSS_TARGET     darwin17
 ENV OSXCROSS_TARGET_DIR /osxcross/target
 RUN dpkg --add-architecture i386 &&\
     apt update &&\
@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386 &&\
     ln -s /usr/bin/clang++-9 /usr/bin/clang++
 RUN cd / &&\
     git clone --branch=with-resume https://github.com/circulosmeos/gdown.pl gdown && mv gdown/gdown.pl /usr/bin/ && rm -rf gdown &&\
-    gdown.pl 'https://drive.google.com/file/d/19b9BRbN5-h40qM8cmySLVNyY_LqV4psE/view?usp=sharing' "${OSX_VER}.tgz"; tar xf "${OSX_VER}.tgz" && rm "${OSX_VER}.tgz" gdown*
+    gdown.pl 'https://drive.google.com/file/d/1o4Q2xqh3M8b0cfAdSri0kYbC4HB1prBP/view?usp=sharing' "${OSX_VER}.tgz"; tar xf "${OSX_VER}.tgz" && rm "${OSX_VER}.tgz" gdown*
 RUN cd / &&\
     git clone --depth 1 -b my_crosscompile https://github.com/Nemirtingas/vcpkg.git vcpkg &&\
     cd /vcpkg &&\
