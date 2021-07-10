@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386 &&\
     ln -s /usr/bin/clang++-9 /usr/bin/clang++
 RUN cd / &&\
     git clone --branch=with-resume https://github.com/circulosmeos/gdown.pl gdown && mv gdown/gdown.pl /usr/bin/ && rm -rf gdown &&\
-    gdown.pl 'https://drive.google.com/file/d/1Erg3tMcLiEHbDosh216eI3msT8wgvd_a/view?usp=sharing' "${OSX_VER}.tgz"; tar xf "${OSX_VER}.tgz" && rm "${OSX_VER}.tgz" gdown*
+    gdown.pl 'https://drive.google.com/file/d/1Erg3tMcLiEHbDosh216eI3msT8wgvd_a/view?usp=sharing' "${OSX_VER}.tgz"; tar xf "${OSX_VER}.tgz" && rm -f "${OSX_VER}.tgz" gdown*
 RUN cd / &&\
     git clone --depth 1 -b my_crosscompile https://github.com/Nemirtingas/vcpkg.git vcpkg &&\
     cd /vcpkg &&\
