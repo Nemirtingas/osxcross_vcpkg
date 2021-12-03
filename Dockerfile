@@ -18,5 +18,6 @@ RUN cd / &&\
     git clone --depth 1 -b my_crosscompile https://github.com/Nemirtingas/vcpkg.git vcpkg &&\
     cd /vcpkg &&\
     ./bootstrap-vcpkg.sh -disableMetrics &&\
+    vcpkg install vcpkg-cmake &&\
     ln -s /vcpkg/vcpkg /usr/bin/ &&\
     ln -s /vcpkg/downloads/tools/cmake-*/cmake-*/bin/cmake /usr/bin/
