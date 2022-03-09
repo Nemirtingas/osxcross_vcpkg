@@ -5,7 +5,9 @@ ENV OSX_VER             11.3
 ENV OSXCROSS_SDK        /osxcross/target/SDK/MacOSX${OSX_VER}.sdk
 ENV OSXCROSS_TARGET     darwin20.4
 ENV OSXCROSS_TARGET_DIR /osxcross/target
-RUN dpkg --add-architecture i386 &&\
+RUN export DEBIAN_FRONTEND=noninteractive &&\
+    export TZ=Etc/UTC &&\
+    dpkg --add-architecture i386 &&\
     apt update &&\
     apt -y install build-essential python git wget zip unzip pkg-config curl clang-12 ninja-build &&\
     apt clean &&\
