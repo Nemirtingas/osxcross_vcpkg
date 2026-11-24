@@ -43,7 +43,8 @@ trap cleanup INT
 #build_image "osxcross_vcpkg" "22.04" "12.3" darwin21.4 22
 #build_image "osxcross_vcpkg" "22.04" "13.3" darwin22.4 22
 #build_image "osxcross_vcpkg" "22.04" "14.5" darwin23.5 22
-build_image "osxcross_vcpkg" "24.04" "11.3" darwin20.4 22
-build_image "osxcross_vcpkg" "24.04" "12.3" darwin21.4 22
-build_image "osxcross_vcpkg" "24.04" "13.3" darwin22.4 22
-build_image "osxcross_vcpkg" "24.04" "14.5" darwin23.5 22
+#build_image "osxcross_vcpkg" "24.04" "11.3" darwin20.4 22
+#build_image "osxcross_vcpkg" "24.04" "12.3" darwin21.4 22
+#build_image "osxcross_vcpkg" "24.04" "13.3" darwin22.4 22
+#build_image "osxcross_vcpkg" "24.04" "14.5" darwin23.5 22
+build_image "osxcross_vcpkg" "24.04" "26.2" darwin25.2 22

@@ -13,7 +13,7 @@ ENV OSXCROSS_TARGET_DIR=/osxcross/target
 ENV CLANG_VER=${CLANG_VER}
 RUN cd /&&\
     git clone --depth=1 https://github.com/Nemirtingas/osxcross_vcpkg --branch=SDK${OSX_VER}_clang${CLANG_VER}_target /osxcross_tmp &&\
-    tar xzf /osxcross_tmp/osxcross_${OSX_VER}_clang${CLANG_VER}.tgz &&\
+    tar xf /osxcross_tmp/osxcross_${OSX_VER}_clang${CLANG_VER}.t* &&\
     rm -rf /osxcross_tmp &&\
     git clone --depth=1 --branch=feature/my-main https://github.com/Nemirtingas/osxcross.git /osxcross_b &&\
     /osxcross_b/build_compiler_rt.sh &&\
